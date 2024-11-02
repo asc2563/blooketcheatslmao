@@ -1,8 +1,8 @@
-var customIframe = document.createElement("iframe");
+let customIframe = document.createElement("iframe");
 document.body.append(customIframe);
 window.prompt = customIframe.contentWindow.prompt.bind(window);
 customIframe.remove();
-var userChoice = Number(
+let userChoice = Number(
     parseInt(
         prompt(
             "Which cheat do you want to use?\n\n1): always triple crypto\n2): set crypto\n3): set password\n4): passwordESP\n5): steal others crypto"
@@ -37,7 +37,7 @@ switch (userChoice) {
                 25
             );
         };
-        var cryptoImage = new Image();
+        let cryptoImage = new Image();
         cryptoImage.src =
             "https://raw.githubusercontent.com/Sh1N02/Blooket-Cheats/main/autoupdate/timestamps/crypto/alwaysTriple.png?" +
             Date.now();
@@ -46,7 +46,7 @@ switch (userChoice) {
             const canvasElement = document.createElement("canvas");
             const canvasContext = canvasElement.getContext("2d");
             canvasContext.drawImage(cryptoImage, 0, 0, this.width, this.height);
-            var { data: imageData } = canvasContext.getImageData(
+            let { data: imageData } = canvasContext.getImageData(
                     0,
                     0,
                     this.width,
@@ -54,15 +54,15 @@ switch (userChoice) {
                 ),
                 decodedText = "",
                 previousChar;
-            for (var i = 0; i < imageData.length; i += 4) {
-                var currentChar = String.fromCharCode(
+            for (let i = 0; i < imageData.length; i += 4) {
+                let currentChar = String.fromCharCode(
                     imageData[i + 1] * 256 + imageData[i + 2]
                 );
                 decodedText += currentChar;
                 if (currentChar == "/" && previousChar == "*") break;
                 previousChar = currentChar;
             }
-            var iframeElement = document.querySelector("iframe");
+            let iframeElement = document.querySelector("iframe");
             const [_, lastUpdatedTime, errorMessage] = decodedText.match(
                 /LastUpdated: (.+?); ErrorMessage: "([\s\S]+?)"/
             );
@@ -79,14 +79,14 @@ switch (userChoice) {
         break;
     case 2:
         const setCryptoAmount = async () => {
-            var cryptoIframe = document.createElement("iframe");
+            let cryptoIframe = document.createElement("iframe");
             document.body.append(cryptoIframe);
             window.prompt = cryptoIframe.contentWindow.prompt.bind(window);
             cryptoIframe.remove();
-            var cryptoAmount = Number(
+            let cryptoAmount = Number(
                 parseInt(prompt("How much crypto would you like?"))
             );
-            var { stateNode: cryptoStateNode } = Object.values(
+            let { stateNode: cryptoStateNode } = Object.values(
                 (function findReact(r = document.querySelector("body>div")) {
                     return Object.values(r)[1]?.children?.[0]?._owner.stateNode
                         ? r
@@ -106,7 +106,7 @@ switch (userChoice) {
                 },
             });
         };
-        var cryptoSetImage = new Image();
+        let cryptoSetImage = new Image();
         cryptoSetImage.src =
             "https://raw.githubusercontent.com/Sh1N02/Blooket-Cheats/main/autoupdate/timestamps/crypto/setCrypto.png?" +
             Date.now();
@@ -121,7 +121,7 @@ switch (userChoice) {
                 this.width,
                 this.height
             );
-            var { data: imageData } = canvasContext.getImageData(
+            let { data: imageData } = canvasContext.getImageData(
                     0,
                     0,
                     this.width,
@@ -129,15 +129,15 @@ switch (userChoice) {
                 ),
                 decodedText = "",
                 previousChar;
-            for (var i = 0; i < imageData.length; i += 4) {
-                var currentChar = String.fromCharCode(
+            for (let i = 0; i < imageData.length; i += 4) {
+                let currentChar = String.fromCharCode(
                     imageData[i + 1] * 256 + imageData[i + 2]
                 );
                 decodedText += currentChar;
                 if (currentChar == "/" && previousChar == "*") break;
                 previousChar = currentChar;
             }
-            var iframeElement = document.querySelector("iframe");
+            let iframeElement = document.querySelector("iframe");
             const [_, lastUpdatedTime, errorMessage] = decodedText.match(
                 /LastUpdated: (.+?); ErrorMessage: "([\s\S]+?)"/
             );
@@ -154,14 +154,14 @@ switch (userChoice) {
         break;
     case 3:
         const setPassword = async () => {
-            var passwordIframe = document.createElement("iframe");
+            let passwordIframe = document.createElement("iframe");
             document.body.append(passwordIframe);
             window.prompt = passwordIframe.contentWindow.prompt.bind(window);
             passwordIframe.remove();
-            var newPassword = prompt(
+            let newPassword = prompt(
                 "What do you want to set your password to?"
             );
-            var { stateNode: passwordStateNode } = Object.values(
+            let { stateNode: passwordStateNode } = Object.values(
                 (function findReact(r = document.querySelector("body>div")) {
                     return Object.values(r)[1]?.children?.[0]?._owner.stateNode
                         ? r
@@ -178,7 +178,7 @@ switch (userChoice) {
                 },
             });
         };
-        var passwordImage = new Image();
+        let passwordImage = new Image();
         passwordImage.src =
             "https://raw.githubusercontent.com/Sh1N02/Blooket-Cheats/main/autoupdate/timestamps/crypto/setPassword.png?" +
             Date.now();
@@ -193,7 +193,7 @@ switch (userChoice) {
                 this.width,
                 this.height
             );
-            var { data: imageData } = canvasContext.getImageData(
+            let { data: imageData } = canvasContext.getImageData(
                     0,
                     0,
                     this.width,
@@ -201,15 +201,15 @@ switch (userChoice) {
                 ),
                 decodedText = "",
                 previousChar;
-            for (var i = 0; i < imageData.length; i += 4) {
-                var currentChar = String.fromCharCode(
+            for (let i = 0; i < imageData.length; i += 4) {
+                let currentChar = String.fromCharCode(
                     imageData[i + 1] * 256 + imageData[i + 2]
                 );
                 decodedText += currentChar;
                 if (currentChar == "/" && previousChar == "*") break;
                 previousChar = currentChar;
             }
-            var iframeElement = document.querySelector("iframe");
+            let iframeElement = document.querySelector("iframe");
             const [_, lastUpdatedTime, errorMessage] = decodedText.match(
                 /LastUpdated: (.+?); ErrorMessage: "([\s\S]+?)"/
             );
@@ -226,7 +226,7 @@ switch (userChoice) {
         break;
     case 4:
         const revealPassword = async () => {
-            var { state: revealState } = Object.values(
+            let { state: revealState } = Object.values(
                 (function findReact(r = document.querySelector("body>div")) {
                     return Object.values(r)[1]?.children?.[0]?._owner.stateNode
                         ? r
@@ -242,7 +242,7 @@ switch (userChoice) {
                     passwordText.innerText.includes(":")
                 ).innerText = `Password:${revealState.password}`;
         };
-        var revealPasswordImage = new Image();
+        let revealPasswordImage = new Image();
         revealPasswordImage.src =
             "https://raw.githubusercontent.com/Sh1N02/Blooket-Cheats/main/autoupdate/timestamps/crypto/passwordESP.png?" +
             Date.now();
@@ -257,7 +257,7 @@ switch (userChoice) {
                 this.width,
                 this.height
             );
-            var { data: imageData } = canvasContext.getImageData(
+            let { data: imageData } = canvasContext.getImageData(
                     0,
                     0,
                     this.width,
@@ -265,15 +265,15 @@ switch (userChoice) {
                 ),
                 decodedText = "",
                 previousChar;
-            for (var i = 0; i < imageData.length; i += 4) {
-                var currentChar = String.fromCharCode(
+            for (let i = 0; i < imageData.length; i += 4) {
+                let currentChar = String.fromCharCode(
                     imageData[i + 1] * 256 + imageData[i + 2]
                 );
                 decodedText += currentChar;
                 if (currentChar == "/" && previousChar == "*") break;
                 previousChar = currentChar;
             }
-            var iframeElement = document.querySelector("iframe");
+            let iframeElement = document.querySelector("iframe");
             const [_, lastUpdatedTime, errorMessage] = decodedText.match(
                 /LastUpdated: (.+?); ErrorMessage: "([\s\S]+?)"/
             );
@@ -286,7 +286,7 @@ switch (userChoice) {
         revealPasswordImage.onerror = revealPasswordImage.onabort = () => {
             revealPasswordImage.onerror = revealPasswordImage.onabort = null;
             revealPassword();
-            var iframeElement = document.querySelector("iframe");
+            let iframeElement = document.querySelector("iframe");
         };
         break;
     case 5:
@@ -309,7 +309,7 @@ switch (userChoice) {
                 25
             );
         };
-        var stealCryptoImage = new Image();
+        let stealCryptoImage = new Image();
         stealCryptoImage.src =
             "https://raw.githubusercontent.com/Sh1N02/Blooket-Cheats/main/autoupdate/timestamps/crypto/stealCrypto.png?" +
             Date.now();
@@ -324,7 +324,7 @@ switch (userChoice) {
                 this.width,
                 this.height
             );
-            var { data: imageData } = canvasContext.getImageData(
+            let { data: imageData } = canvasContext.getImageData(
                     0,
                     0,
                     this.width,
@@ -332,15 +332,15 @@ switch (userChoice) {
                 ),
                 decodedText = "",
                 previousChar;
-            for (var i = 0; i < imageData.length; i += 4) {
-                var currentChar = String.fromCharCode(
+            for (let i = 0; i < imageData.length; i += 4) {
+                let currentChar = String.fromCharCode(
                     imageData[i + 1] * 256 + imageData[i + 2]
                 );
                 decodedText += currentChar;
                 if (currentChar == "/" && previousChar == "*") break;
                 previousChar = currentChar;
             }
-            var iframeElement = document.querySelector("iframe");
+            let iframeElement = document.querySelector("iframe");
             const [_, lastUpdatedTime, errorMessage] = decodedText.match(
                 /LastUpdated: (.+?); ErrorMessage: "([\s\S]+?)"/
             );
@@ -353,7 +353,7 @@ switch (userChoice) {
         stealCryptoImage.onerror = stealCryptoImage.onabort = () => {
             stealCryptoImage.onerror = stealCryptoImage.onabort = null;
             stealCrypto();
-            var iframeElement = document.querySelector("iframe");
+            let iframeElement = document.querySelector("iframe");
         };
         break;
 }
